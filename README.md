@@ -4,43 +4,36 @@
 
 ### 1. Create Vite Project
 ```bash
-npm create vite@latest todo-reactjs -- --template react
+npm create vite@latest todo-reactjs
 cd todo-reactjs
 npm install
 ```
 
 ### 2. Install Tailwind CSS
 ```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+npm install tailwindcss @tailwindcss/vite
 ```
 
 ### 3. Install DaisyUI
 ```bash
-npm install daisyui
+npm i -D daisyui@latest
+```
+
+### 3. Install Lucide React
+```bash
+npm install lucide-react
 ```
 
 ## Configuration
-
-### Tailwind Config (tailwind.config.js)
-```js
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [require("daisyui")],
-}
-```
 
 ### CSS Setup (src/index.css)
 ```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@plugin "daisyui" {
+  themes: night
+}
 ```
 
 ## Running the Project
